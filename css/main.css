@@ -1,5 +1,14 @@
 @charset "utf-8";
 /* CSS Document */
+
+
+html {
+	box-sizing: border-box;
+}
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
 body {
 	margin: 0px;
 	border: 0px;
@@ -12,14 +21,16 @@ body {
 }
 
 #game-boards {
-	width: 100%;
 	text-align: center;
+	display: flex;
+	flex-direction: row;
+	max-width: 900px;
+	margin: 0 auto;
 }
 
 .puzzle-pieces, .puzzle-board {
 	margin-top: 40px;
 	height: 400px;
-	display: inline-block;
 	border: medium solid #333;
 	background-color: #000;
 	color: inherit;
@@ -29,33 +40,18 @@ body {
 .puzzle-pieces {
 	width: 300px;
 	margin-right: 20px;
-
+	display: flex;
+	flex-direction: column;
 }
 
-
-/*
-
-#puzzle-board{ 
+.puzzle-board { 
 	width:600px; 
 	background-image: url('../images/backGround0.jpg');
-	background-image: url('../images/backGround1.jpg');
-	background-image: url('../images/backGround2.jpg');
-	background-image: url('../images/backGround3.jpg'); 
 	background-repeat: no-repeat;
-} 
-*/
-
-#puzzle-bg{ 
-	width:600px; 
-	background-image: url('../images/backGround0.jpg');
-/*	background-image: url('../images/backGround1.jpg');
-	background-image: url('../images/backGround2.jpg');
-	background-image: url('../images/backGround3.jpg'); */
-	background-repeat: no-repeat;
+	display: flex;
+	flex-wrap: wrap;
+	margin-bottom: 65px;
 }
-
-
-
 
 .puzzle-image {
 	width: 40%;
@@ -65,37 +61,31 @@ body {
 }
 
 .puzzle-image:nth-child(even) {
-	float: right;
-	clear: both;
-}
-.puzzle-image:nth-child(odd) {
-	float: left;
-	clear: both;
+	margin-left: auto;
 }
 
 .drop-zone {
-	width: 49.5%;
-	height: 49.5%;
-	/* border: thin dashed white; */
-	float: left;
+	width: 50%;
+	height: 50%;
+	border: thin dashed white;
 	position: relative;
 }
 
 .drop-zone img {
-	float: none;
 	padding: 0;
 	position: absolute;
 	width: 90%;
 }
 
+
+/* set positioning for pieces so they align/snap together */
 .tl img { right: 0; bottom: 0; }
 .tr img { bottom: 0; }
 .bl img { right: 0; }
 
 
 header {
-	position: relative;
-	top: 20px;
+	margin-top: 20px;
 	width:600px;
 	margin: 0px auto;
 	text-align: center;
@@ -103,15 +93,17 @@ header {
 
 header h1 {
 	font-size: 3.25em;
-  letter-spacing: 3px;
+  	letter-spacing: 3px;
 	margin: 10px 0
 }
 
-header p, footer p { font-size: 1.7em; letter-spacing: 2px; margin: 10px 0 }
+header p, footer p { 
+	font-size: 1.7em; 
+	letter-spacing: 2px; 
+	margin: 10px 0 
+}
 
 footer {
-	position: relative;
-	top: 65px;
 	width:600px;
 	margin: 0px auto;
 	text-align: center;
@@ -133,11 +125,3 @@ footer {
 #buttonHolder img:hover {
 	opacity:.5;
 }
-
-#headLine h1 { transition: all ease 1.5s; }
-
-.orange-headline {
-	color: orange;
-}
-
-
