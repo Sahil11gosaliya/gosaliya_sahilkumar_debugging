@@ -17,9 +17,9 @@ function changeBGImage() {
     puzzleBoard.style.backgroundImage = backgroundImage;
 
     puzzlePieces.forEach((piece, index) => {
-        const originalPieceImage = piece.getAttribute('src');
-        const newPieceImage = originalPieceImage.replace(/\d/g, this.id);
-        piece.src = newPieceImage;
+        const backToOriginal = piece.getAttribute('src');
+        const pieces = backToOriginal.replace(/\d/g, this.id);
+        piece.src = pieces;
     });
 
     resetPuzzle();
@@ -51,14 +51,10 @@ function handleDrop(e) {
 
 function resetPuzzle() {
     // Reparent puzzle pieces back to the drag zone
-    puzzlePieces.forEach(piece => {
-        puzzlePieceDiv.appendChild(piece);
-    });
+    puzzlePieces.forEach(piece => {puzzlePieceDiv.appendChild(piece);});
 
     // Clear the drop zones
-    dropZones.forEach(zone => {
-        zone.innerHTML = '';
-    });
+    dropZones.forEach(zone => {zone.innerHTML = ''; });
 }
 
 
