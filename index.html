@@ -7,63 +7,41 @@
 	<link href="css/main.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-	<a href="" style="justify-content: center; color: white;" ; >Click Here To Refresh</a>
+	<button id="resetBut">Reset</button>
 
 	<header id="headLine">
 		<h1>drag and drop!</h1>
 		<p>solve the puzzle</p>
 	</header>
+
 	<section id="game-boards">
 		<!-- these are the draggable pieces -->
-		<div class="puzzle-pieces" id="puzzle_0">
+		<div class="puzzle-pieces">
 			<img src="images/topLeft0.jpg" class="puzzle-image" alt="top left">
 			<img src="images/topRight0.jpg" class="puzzle-image" alt="top right">
 			<img src="images/bottomLeft0.jpg" class="puzzle-image" alt="bottom left">
 			<img src="images/bottomRight0.jpg" class="puzzle-image" alt="bottom right">
-		</div>
-
-		<div class="puzzle-pieces" style="display:none" id="puzzle_1">
-			<img src="images/topLeft1.jpg" class="puzzle-image" alt="top left">
-			<img src="images/topRight1.jpg" class="puzzle-image" alt="top right">
-			<img src="images/bottomLeft1.jpg" class="puzzle-image" alt="bottom left">
-			<img src="images/bottomRight1.jpg" class="puzzle-image" alt="bottom right">
-		</div>
-
-		<div class="puzzle-pieces" style="display:none" id="puzzle_2">
-			<img src="images/topLeft2.jpg" class="puzzle-image" alt="top left">
-			<img src="images/topRight2.jpg" class="puzzle-image" alt="top right">
-			<img src="images/bottomLeft2.jpg" class="puzzle-image" alt="bottom left">
-			<img src="images/bottomRight2.jpg" class="puzzle-image" alt="bottom right">
-		</div>
-
-		<div class="puzzle-pieces" style="display:none" id="puzzle_3">
-			<img src="images/topLeft3.jpg" class="puzzle-image" alt="top left">
-			<img src="images/topRight3.jpg" class="puzzle-image" alt="top right">
-			<img src="images/bottomLeft3.jpg" class="puzzle-image" alt="bottom left">
-			<img src="images/bottomRight3.jpg" class="puzzle-image" alt="bottom right">
-		</div>
-
-		<!-- we want to drop the draggable pieces here -->
-		<div class="puzzle-board" id="puzzle-bg">
+		</div>	
+		<!-- these are the drop zones -->
+		<div class="puzzle-board">
 			<div class="drop-zone tl"></div>
 			<div class="drop-zone tr"></div>
 			<div class="drop-zone bl"></div>
 			<div class="drop-zone br"></div>
 		</div>
 	</section>
-
 	
-
 	<footer>
-		<p>click thumb to change pieces!</p>
+		<p>Click Thumb to change pieces</p>
 		<nav id="buttonHolder">
-			<img id="0" onClick="reply_click(this.id)" src="images/buttonZero.jpg" alt="thumbnail">
-			<img id="1" onClick="reply_click(this.id)" src="images/buttonOne.jpg" alt="thumbnail">
-	    	<img id="2" onClick="reply_click(this.id)" src="images/buttonTwo.jpg" alt="thumbnail">
-			<img id="3" onClick="reply_click(this.id)" src="images/buttonThree.jpg" alt="thumbnail">
+			<img data-bgref="0" src="images/buttonZero.jpg" alt="puzzle background forest">
+			<img data-bgref="1" src="images/buttonOne.jpg" alt="puzzle background winter">
+			<img data-bgref="2" src="images/buttonTwo.jpg" alt="puzzle background space">
+			<img data-bgref="3" src="images/buttonThree.jpg" alt="puzzle background robots">
 		</nav>
+		
 	</footer>
 
-	<script src="script/main.js"></script>
+	<script src="js/main.js"></script>
 </body>
 </html>
